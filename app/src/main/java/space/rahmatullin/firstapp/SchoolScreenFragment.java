@@ -22,12 +22,12 @@ public class SchoolScreenFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View schoolScreenView = inflater.inflate(R.layout.fragment_school_screen, container, false);
-
-        Button buttonNext = (Button)schoolScreenView.findViewById(R.id.button_next);
-        Button buttonPrev = (Button)schoolScreenView.findViewById(R.id.button_prev);
-
-        buttonNext.setOnClickListener(view -> ((MainActivity)getActivity()).changeFragment(R.id.schoolScreenFragment, R.id.homeScreenFragment));
-        buttonPrev.setOnClickListener(view -> ((MainActivity)getActivity()).changeFragment(R.id.schoolScreenFragment, R.id.planeScreenFragment));
+//
+//        Button buttonNext = (Button)schoolScreenView.findViewById(R.id.button_next);
+//        Button buttonPrev = (Button)schoolScreenView.findViewById(R.id.button_prev);
+//
+//        buttonNext.setOnClickListener(view -> ((MainActivity)getActivity()).changeFragment(R.id.schoolScreenFragment, R.id.homeScreenFragment));
+//        buttonPrev.setOnClickListener(view -> ((MainActivity)getActivity()).changeFragment(R.id.schoolScreenFragment, R.id.planeScreenFragment));
 
         return schoolScreenView;
     }

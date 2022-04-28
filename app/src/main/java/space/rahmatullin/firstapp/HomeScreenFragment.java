@@ -26,15 +26,15 @@ public class HomeScreenFragment extends Fragment {
         // Inflate the layout for this fragment
         View homeScreenView = inflater.inflate(R.layout.fragment_home_screen, container, false);
 
-        Button buttonPrev = (Button)homeScreenView.findViewById(R.id.button_prev);
-        Button buttonNext = (Button)homeScreenView.findViewById(R.id.button_next);
-        Button buttonStart = (Button)homeScreenView.findViewById(R.id.button_start);
-
+//        Button buttonPrev = (Button)homeScreenView.findViewById(R.id.button_prev);
+//        Button buttonNext = (Button)homeScreenView.findViewById(R.id.button_next);
+//        Button buttonStart = (Button)homeScreenView.findViewById(R.id.button_start);
+//
 
 
 //      buttonStart.setOnClickListener(view -> {});
-        buttonNext.setOnClickListener(view -> ((MainActivity)getActivity()).changeFragment(R.id.homeScreenFragment, R.id.planeScreenFragment));
-        buttonPrev.setOnClickListener(view -> ((MainActivity)getActivity()).changeFragment(R.id.homeScreenFragment, R.id.schoolScreenFragment));
+//        buttonNext.setOnClickListener(view -> ((MainActivity)getActivity()).changeFragment(R.id.homeScreenFragment, R.id.planeScreenFragment));
+//        buttonPrev.setOnClickListener(view -> ((MainActivity)getActivity()).changeFragment(R.id.homeScreenFragment, R.id.schoolScreenFragment));
 
         return homeScreenView;
     }
