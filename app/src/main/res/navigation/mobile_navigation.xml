@@ -15,9 +15,6 @@
         <action
             android:id="@+id/action_homeScreenFragment_to_planeScreenFragment"
             app:destination="@id/planeScreenFragment" />
-        <action
-            android:id="@+id/action_homeScreenFragment_to_chooseSexFragment"
-            app:destination="@id/chooseSexFragment" />
     </fragment>
     <fragment
         android:id="@+id/schoolScreenFragment"
@@ -30,9 +27,6 @@
         <action
             android:id="@+id/action_schoolScreenFragment_to_homeScreenFragment"
             app:destination="@id/homeScreenFragment" />
-        <action
-            android:id="@+id/action_schoolScreenFragment_to_chooseSexFragment"
-            app:destination="@id/chooseSexFragment" />
     </fragment>
     <fragment
         android:id="@+id/planeScreenFragment"
@@ -45,13 +39,5 @@
         <action
             android:id="@+id/action_planeScreenFragment_to_schoolScreenFragment"
             app:destination="@id/schoolScreenFragment" />
-        <action
-            android:id="@+id/action_planeScreenFragment_to_chooseSexFragment"
-            app:destination="@id/chooseSexFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/chooseSexFragment"
-        android:name="space.rahmatullin.firstapp.ChooseSexFragment"
-        android:label="fragment_choose_sex"
-        tools:layout="@layout/fragment_choose_sex" />
 </navigation>
