@@ -3,29 +3,55 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/homeScreenFragment2">
-
+    app:startDestination="@id/homeScreenFragment">
     <fragment
-        android:id="@+id/planeScreenFragment2"
-        android:name="space.rahmatullin.firstapp.PlaneScreenFragment"
-        android:label="fragment_plane_screen"
-        tools:layout="@layout/fragment_plane_screen" >
-        <action
-            android:id="@+id/action_planeScreenFragment2_to_schoolScreenFragment2"
-            app:destination="@id/schoolScreenFragment2" />
-    </fragment>
-    <fragment
-        android:id="@+id/schoolScreenFragment2"
-        android:name="space.rahmatullin.firstapp.SchoolScreenFragment"
-        android:label="fragment_school_screen"
-        tools:layout="@layout/fragment_school_screen" />
-    <fragment
-        android:id="@+id/homeScreenFragment2"
+        android:id="@+id/homeScreenFragment"
         android:name="space.rahmatullin.firstapp.HomeScreenFragment"
         android:label="fragment_home_screen"
         tools:layout="@layout/fragment_home_screen" >
         <action
-            android:id="@+id/action_homeScreenFragment2_to_planeScreenFragment2"
-            app:destination="@id/planeScreenFragment2" />
+            android:id="@+id/action_homeScreenFragment_to_schoolScreenFragment"
+            app:destination="@id/schoolScreenFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_planeScreenFragment"
+            app:destination="@id/planeScreenFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_chooseSexFragment"
+            app:destination="@id/chooseSexFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/schoolScreenFragment"
+        android:name="space.rahmatullin.firstapp.SchoolScreenFragment"
+        android:label="fragment_school_screen"
+        tools:layout="@layout/fragment_school_screen" >
+        <action
+            android:id="@+id/action_schoolScreenFragment_to_planeScreenFragment"
+            app:destination="@id/planeScreenFragment" />
+        <action
+            android:id="@+id/action_schoolScreenFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
+        <action
+            android:id="@+id/action_schoolScreenFragment_to_chooseSexFragment"
+            app:destination="@id/chooseSexFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/planeScreenFragment"
+        android:name="space.rahmatullin.firstapp.PlaneScreenFragment"
+        android:label="fragment_plane_screen"
+        tools:layout="@layout/fragment_plane_screen" >
+        <action
+            android:id="@+id/action_planeScreenFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
+        <action
+            android:id="@+id/action_planeScreenFragment_to_schoolScreenFragment"
+            app:destination="@id/schoolScreenFragment" />
+        <action
+            android:id="@+id/action_planeScreenFragment_to_chooseSexFragment"
+            app:destination="@id/chooseSexFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseSexFragment"
+        android:name="space.rahmatullin.firstapp.chooseSexFragment"
+        android:label="fragment_choose_sex"
+        tools:layout="@layout/fragment_choose_sex" />
 </navigation>
