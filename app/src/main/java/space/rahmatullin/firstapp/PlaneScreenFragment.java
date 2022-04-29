@@ -23,9 +23,11 @@ public class PlaneScreenFragment extends Fragment {
         // Inflate the layout for this fragment
         View planeScreenView =  inflater.inflate(R.layout.fragment_plane_screen, container, false);
 
+        Button buttonStart = (Button)planeScreenView.findViewById(R.id.button_start);
         Button buttonNext = (Button)planeScreenView.findViewById(R.id.button_next);
         Button buttonPrev = (Button)planeScreenView.findViewById(R.id.button_prev);
 
+//        buttonStart.setOnClickListener(view -> changeNavFragment(R.id.));
         buttonNext.setOnClickListener(view -> changeNavFragment(R.id.action_planeScreenFragment_to_homeScreenFragment));
         buttonPrev.setOnClickListener(view -> changeNavFragment(R.id.action_planeScreenFragment_to_schoolScreenFragment));
 

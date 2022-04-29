@@ -3,4 +3,7 @@
     <string name="start">Начать</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="textMale">Мужской</string>
+    <string name="textFemale">Женсикй</string>
+    <string name="textChooseSex">Выбери пол персонажа:</string>
 </resources>

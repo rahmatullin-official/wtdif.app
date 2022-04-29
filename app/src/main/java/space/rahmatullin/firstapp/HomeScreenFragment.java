@@ -27,19 +27,18 @@ public class HomeScreenFragment extends Fragment {
         // Inflate the layout for this fragment
         View homeScreenView = inflater.inflate(R.layout.fragment_home_screen, container, false);
 
-        Button buttonPrev = (Button)homeScreenView.findViewById(R.id.button_prev);
-        Button buttonNext = (Button)homeScreenView.findViewById(R.id.button_next);
-        Button buttonStart = (Button)homeScreenView.findViewById(R.id.button_start);
+        Button buttonStart = (Button) homeScreenView.findViewById(R.id.button_start);
+        Button buttonPrev = (Button) homeScreenView.findViewById(R.id.button_prev);
+        Button buttonNext = (Button) homeScreenView.findViewById(R.id.button_next);
 
-
-
+//        buttonStart.setOnClickListener(view -> changeNavFragment(R.id.action_homeScreenFragment_to_chooseSexFragment));
         buttonNext.setOnClickListener(view -> changeNavFragment(R.id.action_homeScreenFragment_to_schoolScreenFragment));
         buttonPrev.setOnClickListener(view -> changeNavFragment(R.id.action_homeScreenFragment_to_planeScreenFragment));
 
         return homeScreenView;
     }
 
-    public void changeNavFragment(int navLink){
+    public void changeNavFragment(int navLink) {
         NavHostFragment.findNavController(this).navigate(navLink);
     }
 
