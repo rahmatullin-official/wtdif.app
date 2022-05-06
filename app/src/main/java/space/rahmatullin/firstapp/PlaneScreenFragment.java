@@ -1,8 +1,10 @@
 package space.rahmatullin.firstapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
@@ -11,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 public class PlaneScreenFragment extends Fragment {
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,21 +25,26 @@ public class PlaneScreenFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View planeScreenView =  inflater.inflate(R.layout.fragment_plane_screen, container, false);
+        View homeScreenView = inflater.inflate(R.layout.fragment_plane_screen, container, false);
 
-        Button buttonStart = (Button)planeScreenView.findViewById(R.id.button_start);
-        Button buttonNext = (Button)planeScreenView.findViewById(R.id.button_next);
-        Button buttonPrev = (Button)planeScreenView.findViewById(R.id.button_prev);
+        Button buttonStart = (Button) homeScreenView.findViewById(R.id.button_start_plane);
+        Button buttonPrev = (Button) homeScreenView.findViewById(R.id.button_prev);
+        Button buttonNext = (Button) homeScreenView.findViewById(R.id.button_next);
 
-//        buttonStart.setOnClickListener(view -> changeNavFragment(R.id.));
-        buttonNext.setOnClickListener(view -> changeNavFragment(R.id.action_planeScreenFragment_to_homeScreenFragment));
-        buttonPrev.setOnClickListener(view -> changeNavFragment(R.id.action_planeScreenFragment_to_schoolScreenFragment));
+        buttonStart.setOnClickListener(view -> {
+            PlaneScreenFragmentDirections.ActionPlaneScreenFragmentToChooseSexFragment action = PlaneScreenFragmentDirections.actionPlaneScreenFragmentToChooseSexFragment();
+            action.setId(2);
+            NavHostFragment.findNavController(this).navigate(action);
+        });
+        buttonNext.setOnClickListener(view -> changeNavFragment(R.id.action_planeScreenFragment_to_schoolScreenFragment));
+        buttonPrev.setOnClickListener(view -> changeNavFragment(R.id.action_planeScreenFragment_to_homeScreenFragment));
 
-
-        return planeScreenView;
+        return homeScreenView;
     }
 
-    public void changeNavFragment(int navLink){
+    public void changeNavFragment(int navLink) {
         NavHostFragment.findNavController(this).navigate(navLink);
     }
+
+
 }

@@ -31,9 +31,13 @@ public class HomeScreenFragment extends Fragment {
         Button buttonPrev = (Button) homeScreenView.findViewById(R.id.button_prev);
         Button buttonNext = (Button) homeScreenView.findViewById(R.id.button_next);
 
-//        buttonStart.setOnClickListener(view -> changeNavFragment(R.id.action_homeScreenFragment_to_chooseSexFragment));
-        buttonNext.setOnClickListener(view -> changeNavFragment(R.id.action_homeScreenFragment_to_schoolScreenFragment));
-        buttonPrev.setOnClickListener(view -> changeNavFragment(R.id.action_homeScreenFragment_to_planeScreenFragment));
+        buttonStart.setOnClickListener(view -> {
+            HomeScreenFragmentDirections.ActionHomeScreenFragmentToChooseSexFragment action = HomeScreenFragmentDirections.actionHomeScreenFragmentToChooseSexFragment();
+            action.setId(1);
+            NavHostFragment.findNavController(this).navigate(action);
+        });
+        buttonNext.setOnClickListener(view -> changeNavFragment(R.id.action_homeScreenFragment_to_planeScreenFragment));
+        buttonPrev.setOnClickListener(view -> changeNavFragment(R.id.action_homeScreenFragment_to_schoolScreenFragment));
 
         return homeScreenView;
     }

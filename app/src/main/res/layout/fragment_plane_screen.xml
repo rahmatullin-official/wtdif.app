@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PlaneScreenFragment">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -28,7 +27,8 @@
             android:layout_marginTop="450dp"
             android:layout_marginEnd="120dp"
             android:src="@drawable/plane"
-            android:transitionName="icon" />
+            android:transitionName="icon"
+            tools:ignore="ImageContrastCheck,ImageContrastCheck" />
 
         <LinearLayout
             android:id="@+id/startLayout"

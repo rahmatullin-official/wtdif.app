@@ -5,22 +5,62 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@id/homeScreenFragment">
     <fragment
+        android:id="@+id/chooseSexFragment"
+        android:name="space.rahmatullin.firstapp.ChooseSexFragment"
+        android:label="fragment_choose_sex"
+        tools:layout="@layout/fragment_choose_sex" >
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="1" />
+        <action
+            android:id="@+id/action_chooseSexFragment_to_homePlayFragment"
+            app:destination="@id/homePlayFragment" />
+        <action
+            android:id="@+id/action_chooseSexFragment_to_planePlayFragment"
+            app:destination="@id/planePlayFragment" />
+        <action
+            android:id="@+id/action_chooseSexFragment_to_schoolPlayFragment"
+            app:destination="@id/schoolPlayFragment" />
+    </fragment>
+    <fragment
         android:id="@+id/homeScreenFragment"
         android:name="space.rahmatullin.firstapp.HomeScreenFragment"
         android:label="fragment_home_screen"
         tools:layout="@layout/fragment_home_screen" >
         <action
-            android:id="@+id/action_homeScreenFragment_to_schoolScreenFragment"
-            app:destination="@id/schoolScreenFragment" />
-        <action
             android:id="@+id/action_homeScreenFragment_to_planeScreenFragment"
             app:destination="@id/planeScreenFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_chooseSexFragment"
+            app:destination="@id/chooseSexFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_schoolScreenFragment"
+            app:destination="@id/schoolScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/planeScreenFragment"
+        android:name="space.rahmatullin.firstapp.PlaneScreenFragment"
+        android:label="fragment_plane_screen"
+        tools:layout="@layout/fragment_plane_screen" >
+        <action
+            android:id="@+id/action_planeScreenFragment_to_schoolScreenFragment"
+            app:destination="@id/schoolScreenFragment" />
+        <action
+            android:id="@+id/action_planeScreenFragment_to_chooseSexFragment"
+            app:destination="@id/chooseSexFragment" />
+        <action
+            android:id="@+id/action_planeScreenFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
     </fragment>
     <fragment
         android:id="@+id/schoolScreenFragment"
         android:name="space.rahmatullin.firstapp.SchoolScreenFragment"
         android:label="fragment_school_screen"
         tools:layout="@layout/fragment_school_screen" >
+        <action
+            android:id="@+id/action_schoolScreenFragment_to_chooseSexFragment"
+            app:destination="@id/chooseSexFragment" />
         <action
             android:id="@+id/action_schoolScreenFragment_to_planeScreenFragment"
             app:destination="@id/planeScreenFragment" />
@@ -29,15 +69,29 @@
             app:destination="@id/homeScreenFragment" />
     </fragment>
     <fragment
-        android:id="@+id/planeScreenFragment"
-        android:name="space.rahmatullin.firstapp.PlaneScreenFragment"
-        android:label="fragment_plane_screen"
-        tools:layout="@layout/fragment_plane_screen" >
-        <action
-            android:id="@+id/action_planeScreenFragment_to_homeScreenFragment"
-            app:destination="@id/homeScreenFragment" />
-        <action
-            android:id="@+id/action_planeScreenFragment_to_schoolScreenFragment"
-            app:destination="@id/schoolScreenFragment" />
+        android:id="@+id/homePlayFragment"
+        android:name="space.rahmatullin.firstapp.HomePlayFragment"
+        android:label="fragment_home_play"
+        tools:layout="@layout/fragment_home_play" >
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/planePlayFragment"
+        android:name="space.rahmatullin.firstapp.PlanePlayFragment"
+        android:label="fragment_plane_play"
+        tools:layout="@layout/fragment_plane_play" >
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/schoolPlayFragment"
+        android:name="space.rahmatullin.firstapp.SchoolPlayFragment"
+        android:label="fragment_school_play"
+        tools:layout="@layout/fragment_school_play" >
+        <argument android:name="name"
+            app:argType="string" />
     </fragment>
 </navigation>
