@@ -26,9 +26,12 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import org.w3c.dom.Text;
+
 import java.util.Objects;
 
 import space.rahmatullin.firstapp.Models.User;
+import space.rahmatullin.firstapp.R;
 
 
 public class AuthScreenFragment extends Fragment {
@@ -60,25 +63,16 @@ public class AuthScreenFragment extends Fragment {
         dbUsers = db.getReference("Users");
 
         buttonRegister.setOnClickListener(view -> showRegisterWindow());
-        buttonAuth.setOnClickListener(view -> showSignInWindow());
+        buttonAuth.setOnClickListener(view -> AuthUser(authScreenView));
 
         return authScreenView;
     }
 
-    private void showSignInWindow() {
-        AlertDialog.Builder dialog = new AlertDialog.Builder(getActivity());
-        dialog.setTitle("Вход");
-        dialog.setMessage("Введите данные для входа");
+    private void AuthUser(View authScreenView) {
 
-        LayoutInflater inflater = LayoutInflater.from(getActivity());
-        View signInWindow = inflater.inflate(R.layout.sign_in_window, null);
-        dialog.setView(signInWindow);
+        TextInputEditText email = authScreenView.findViewById(R.id.emailField);
+        TextInputEditText pass = authScreenView.findViewById(R.id.passField);
 
-        final TextInputEditText email = signInWindow.findViewById(R.id.emailField);
-        final TextInputEditText pass = signInWindow.findViewById(R.id.passField);
-
-        dialog.setNegativeButton("Отменить", (dialogInterface, i) -> dialogInterface.dismiss());
-        dialog.setPositiveButton("Войти", (dialogInterface, i) -> {
             if (TextUtils.isEmpty(email.getText().toString())) {
                 Snackbar.make(authFragment, "Введите вашу почту", Snackbar.LENGTH_SHORT).show();
                 return;
@@ -97,9 +91,6 @@ public class AuthScreenFragment extends Fragment {
                         Snackbar.make(authFragment, "Ошибка авторизации. " + e.getMessage(), Snackbar.LENGTH_SHORT)
                                 .show();
             });
-        });
-
-        dialog.show();
     }
 
     private void showRegisterWindow() {

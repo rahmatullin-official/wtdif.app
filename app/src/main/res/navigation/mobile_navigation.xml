@@ -96,7 +96,7 @@
     </fragment>
     <fragment
         android:id="@+id/authScreenFragment"
-        android:name="space.rahmatullin.firstapp.AuthScreenFragment"
+        android:name="space.rahmatullin.wtdif.AuthScreenFragment"
         android:label="fragment_auth_screen"
         tools:layout="@layout/fragment_auth_screen" >
         <action

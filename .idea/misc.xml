@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/android_projects/wtdif.app/app/src/main/res/layout/fragment_auth_screen.xml" value="0.12083333333333333" />
+        <entry key="..\:/android_projects/wtdif.app/app/src/main/res/layout/register_window.xml" value="0.12083333333333333" />
         <entry key="..\:/android_projects/wtdif/app/src/main/res/layout/fragment_auth_screen.xml" value="0.5620608899297423" />
       </map>
     </option>
