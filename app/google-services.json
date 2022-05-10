@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "136520859118",
+    "project_id": "wtdifapp-ded50",
+    "storage_bucket": "wtdifapp-ded50.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:136520859118:android:0840bbb3b9786aca4e62ff",
+        "android_client_info": {
+          "package_name": "space.rahmatullin.firstapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "136520859118-4nsgjes4jsj42as8uop6naftl8gu96ae.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2DUA30XLcxUfeqSmw1i9gb-zG8UQXaMo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "136520859118-4nsgjes4jsj42as8uop6naftl8gu96ae.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
