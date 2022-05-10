@@ -57,7 +57,7 @@ public class AuthScreenFragment extends Fragment {
 
         auth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance();
-        dbUsers = db.getReference("users");
+        dbUsers = db.getReference("Users");
 
         buttonRegister.setOnClickListener(view -> showRegisterWindow());
         buttonAuth.setOnClickListener(view -> showSignInWindow());
