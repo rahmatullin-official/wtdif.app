@@ -6,4 +6,9 @@
     <string name="textMale">Мужской</string>
     <string name="textFemale">Женсикй</string>
     <string name="textChooseSex">Выбери пол персонажа:</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="repeat_your_password">Repeat your password</string>
+    <string name="register_now">register now</string>
+    <string name="login">Login</string>
 </resources>
