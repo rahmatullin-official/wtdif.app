@@ -1,4 +1,4 @@
-package space.rahmatullin.firstapp;
+package space.rahmatullin.wtdif;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("space.rahmatullin.firstapp", appContext.getPackageName());
+        assertEquals("space.rahmatullin.wtdif", appContext.getPackageName());
     }
 }

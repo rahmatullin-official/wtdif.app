@@ -60,46 +60,34 @@ public class AuthScreenFragment extends Fragment {
         dbUsers = db.getReference("Users");
 
         buttonRegister.setOnClickListener(view -> showRegisterWindow());
-        buttonAuth.setOnClickListener(view -> showSignInWindow());
+        buttonAuth.setOnClickListener(view -> showSignInWindow(authScreenView));
 
         return authScreenView;
     }
 
-    private void showSignInWindow() {
-        AlertDialog.Builder dialog = new AlertDialog.Builder(getActivity());
-        dialog.setTitle("Вход");
-        dialog.setMessage("Введите данные для входа");
+    private void showSignInWindow(View authScreenView) {
 
-        LayoutInflater inflater = LayoutInflater.from(getActivity());
-        View signInWindow = inflater.inflate(R.layout.sign_in_window, null);
-        dialog.setView(signInWindow);
+        final TextInputEditText email = authScreenView.findViewById(R.id.emailField);
+        final TextInputEditText pass = authScreenView.findViewById(R.id.passField);
 
-        final TextInputEditText email = signInWindow.findViewById(R.id.emailField);
-        final TextInputEditText pass = signInWindow.findViewById(R.id.passField);
+        if (TextUtils.isEmpty(email.getText().toString())) {
+            Snackbar.make(authFragment, "Введите вашу почту", Snackbar.LENGTH_SHORT).show();
+            return;
+        }
+        if (pass.getText().toString().length() < 5) {
+            Snackbar.make(authFragment, "Введите пароль, более 5 символов", Snackbar.LENGTH_SHORT)
+                    .show();
+            return;
+        }
+        // Авторизация пользователя
 
-        dialog.setNegativeButton("Отменить", (dialogInterface, i) -> dialogInterface.dismiss());
-        dialog.setPositiveButton("Войти", (dialogInterface, i) -> {
-            if (TextUtils.isEmpty(email.getText().toString())) {
-                Snackbar.make(authFragment, "Введите вашу почту", Snackbar.LENGTH_SHORT).show();
-                return;
-            }
-            if (pass.getText().toString().length() < 5) {
-                Snackbar.make(authFragment, "Введите пароль, более 5 символов", Snackbar.LENGTH_SHORT)
-                        .show();
-                return;
-            }
-            // Авторизация пользователя
-
-            auth.signInWithEmailAndPassword(email.getText().toString(), pass.getText().toString())
-                    .addOnSuccessListener(authResult -> {
-                            changeNavFragment(R.id.action_authScreenFragment_to_homeScreenFragment);
-                    }).addOnFailureListener(e -> {
-                        Snackbar.make(authFragment, "Ошибка авторизации. " + e.getMessage(), Snackbar.LENGTH_SHORT)
-                                .show();
-            });
+        auth.signInWithEmailAndPassword(email.getText().toString(), pass.getText().toString())
+                .addOnSuccessListener(authResult -> {
+                    changeNavFragment(R.id.action_authScreenFragment_to_homeScreenFragment);
+                }).addOnFailureListener(e -> {
+            Snackbar.make(authFragment, "Ошибка авторизации. " + e.getMessage(), Snackbar.LENGTH_SHORT)
+                    .show();
         });
-
-        dialog.show();
     }
 
     private void showRegisterWindow() {
@@ -130,7 +118,7 @@ public class AuthScreenFragment extends Fragment {
                 Snackbar.make(authFragment, "Повторите пароль", Snackbar.LENGTH_SHORT).show();
                 return;
             }
-            if (!repeatPass.getText().toString().equals(pass.getText().toString())){
+            if (!repeatPass.getText().toString().equals(pass.getText().toString())) {
                 Snackbar.make(authFragment, "Пароли не совпадают", Snackbar.LENGTH_SHORT).show();
                 return;
             }
@@ -139,10 +127,10 @@ public class AuthScreenFragment extends Fragment {
                     .addOnSuccessListener(authResult -> {
                         User user = new User(email.getText().toString(), pass.getText().toString());
                         dbUsers.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(user)
-                        .addOnSuccessListener(unused -> {
-                            Snackbar.make(authFragment, "Вы успешно зарегестрировались!", Snackbar.LENGTH_SHORT)
-                                    .show();
-                        });
+                                .addOnSuccessListener(unused -> {
+                                    Snackbar.make(authFragment, "Вы успешно зарегестрировались!", Snackbar.LENGTH_SHORT)
+                                            .show();
+                                });
                     });
         });
 

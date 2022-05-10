@@ -1,4 +1,4 @@
-package space.rahmatullin.firstapp;
+package space.rahmatullin.wtdif;
 
 import org.junit.Test;
 
