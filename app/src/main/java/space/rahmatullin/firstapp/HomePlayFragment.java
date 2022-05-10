@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import space.rahmatullin.firstapp.R;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link HomePlayFragment#newInstance} factory method to
