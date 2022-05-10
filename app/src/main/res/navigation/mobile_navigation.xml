@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/homeScreenFragment">
+    app:startDestination="@id/authScreenFragment">
     <fragment
         android:id="@+id/chooseSexFragment"
         android:name="space.rahmatullin.firstapp.ChooseSexFragment"
@@ -93,5 +93,14 @@
         tools:layout="@layout/fragment_school_play" >
         <argument android:name="name"
             app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/authScreenFragment"
+        android:name="space.rahmatullin.firstapp.AuthScreenFragment"
+        android:label="fragment_auth_screen"
+        tools:layout="@layout/fragment_auth_screen" >
+        <action
+            android:id="@+id/action_authScreenFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
     </fragment>
 </navigation>

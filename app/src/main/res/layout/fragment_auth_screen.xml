@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/authFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AuthScreenFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="293dp"
+            android:layout_height="232dp"
+            android:layout_above="@+id/emailField"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="100dp"
+            android:src="@drawable/splashlogoauth" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/emailField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/passField"
+            android:layout_marginBottom="50dp"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+
+
+            android:text=""
+            android:textColor="@color/dark_blue"
+            android:textColorHint="@color/opacity_orange"
+            android:textSize="20sp" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/button_auth"
+            android:layout_marginBottom="50dp"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:text=""
+            android:textColor="@color/dark_blue"
+            android:textColorHint="@color/opacity_orange"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/button_register"
+            style="@style/AuthButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="@string/register_now" />
+
+        <Button
+            android:id="@+id/button_auth"
+            style="@style/AuthButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/button_register"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:text="@string/login" />
+    </RelativeLayout>
+</FrameLayout>
