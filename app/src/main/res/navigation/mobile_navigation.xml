@@ -33,7 +33,8 @@
             app:destination="@id/planeScreenFragment" />
         <action
             android:id="@+id/action_homeScreenFragment_to_chooseSexFragment"
-            app:destination="@id/chooseSexFragment" />
+            app:destination="@id/chooseSexFragment"
+            app:enterAnim="@anim/push_up_in" />
         <action
             android:id="@+id/action_homeScreenFragment_to_schoolScreenFragment"
             app:destination="@id/schoolScreenFragment" />
@@ -48,7 +49,8 @@
             app:destination="@id/schoolScreenFragment" />
         <action
             android:id="@+id/action_planeScreenFragment_to_chooseSexFragment"
-            app:destination="@id/chooseSexFragment" />
+            app:destination="@id/chooseSexFragment"
+            app:enterAnim="@anim/push_up_in" />
         <action
             android:id="@+id/action_planeScreenFragment_to_homeScreenFragment"
             app:destination="@id/homeScreenFragment" />
@@ -60,7 +62,8 @@
         tools:layout="@layout/fragment_school_screen" >
         <action
             android:id="@+id/action_schoolScreenFragment_to_chooseSexFragment"
-            app:destination="@id/chooseSexFragment" />
+            app:destination="@id/chooseSexFragment"
+            app:enterAnim="@anim/push_up_in" />
         <action
             android:id="@+id/action_schoolScreenFragment_to_planeScreenFragment"
             app:destination="@id/planeScreenFragment" />
@@ -101,6 +104,8 @@
         tools:layout="@layout/fragment_auth_screen" >
         <action
             android:id="@+id/action_authScreenFragment_to_homeScreenFragment"
-            app:destination="@id/homeScreenFragment" />
+            app:destination="@id/homeScreenFragment"
+            app:enterAnim="@anim/push_up_in"
+            app:exitAnim="@anim/slide_in_left" />
     </fragment>
 </navigation>
