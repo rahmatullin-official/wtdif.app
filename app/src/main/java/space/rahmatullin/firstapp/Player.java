@@ -1,15 +1,20 @@
 package space.rahmatullin.firstapp;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
 public class Player {
     public String Name;
+    public int coins, skin, points, healthPoints;
 
-    public Player(String sex) {
+
+    public Player(String sex, int coins, int skin, int points) {
         this.Name = setName(sex);
+        this.coins = coins;
+        this.skin = skin;
+        this.points = points;
+        this.healthPoints = 3;
     }
 
     public String setName(String sex) {

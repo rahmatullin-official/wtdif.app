@@ -4,8 +4,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="textMale">Мужской</string>
-    <string name="textFemale">Женсикй</string>
-    <string name="textChooseSex">Выбери пол персонажа:</string>
+    <string name="textFemale">Женсикий</string>
+    <string name="textChooseSex">Укажите пол.</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="repeat_your_password">Repeat your password</string>

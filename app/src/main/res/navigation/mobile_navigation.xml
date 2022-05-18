@@ -77,8 +77,17 @@
         android:label="fragment_home_play"
         tools:layout="@layout/fragment_home_play" >
         <argument
-            android:name="name"
+            android:name="sex"
             app:argType="string" />
+        <argument
+            android:name="coins"
+            app:argType="integer" />
+        <argument
+            android:name="skin"
+            app:argType="integer" />
+        <argument
+            android:name="points_home"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/planePlayFragment"
@@ -86,16 +95,33 @@
         android:label="fragment_plane_play"
         tools:layout="@layout/fragment_plane_play" >
         <argument
-            android:name="name"
+            android:name="sex"
             app:argType="string" />
+        <argument
+            android:name="coins"
+            app:argType="integer" />
+        <argument
+            android:name="skin"
+            app:argType="integer" />
+        <argument
+            android:name="points_plane"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/schoolPlayFragment"
         android:name="space.rahmatullin.firstapp.SchoolPlayFragment"
         android:label="fragment_school_play"
         tools:layout="@layout/fragment_school_play" >
-        <argument android:name="name"
+        <argument android:name="sex"
             app:argType="string" />
+        <argument
+            android:name="coins"
+            app:argType="integer" />
+        <argument android:name="skin"
+            app:argType="integer" />
+        <argument
+            android:name="points_school"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/authScreenFragment"

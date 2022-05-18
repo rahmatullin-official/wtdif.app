@@ -13,6 +13,10 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="ButtonChooseSex" parent="Widget.MaterialComponents.Button">
+        <item name="android:buttonStyle">@drawable/button_choose_sex</item>
+        <item name="android:backgroundTint">@color/red</item>
+    </style>
     <style name="Theme.SplashTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:windowBackground">@drawable/splashscreen</item>
     </style>

@@ -10,4 +10,6 @@
     <color name="opacity_orange">#8f695e</color>
     <color name="dark_blue">#1f2635</color>
     <color name="grey">#706f76</color>
+    <color name="red">#ff0000</color>
+    <color name="blue">#1f2635</color>
 </resources>
