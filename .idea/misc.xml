@@ -22,17 +22,20 @@
         <entry key="..\:/android_projects/wtdif.app/app/src/main/res/drawable/buttonStyle.xml" value="0.2555" />
         <entry key="..\:/android_projects/wtdif.app/app/src/main/res/drawable/button_choose_sex.xml" value="0.151" />
         <entry key="..\:/android_projects/wtdif.app/app/src/main/res/drawable/splashscreen.xml" value="0.1" />
+        <entry key="..\:/android_projects/wtdif.app/app/src/main/res/drawable/style_points.xml" value="0.151" />
+        <entry key="..\:/android_projects/wtdif.app/app/src/main/res/layout-v28/fragment_home_play.xml" value="0.1" />
         <entry key="..\:/android_projects/wtdif.app/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/android_projects/wtdif.app/app/src/main/res/layout/activity_play.xml" value="0.1" />
         <entry key="..\:/android_projects/wtdif.app/app/src/main/res/layout/fragment_auth_screen.xml" value="0.2" />
         <entry key="..\:/android_projects/wtdif.app/app/src/main/res/layout/fragment_choose_sex.xml" value="0.264" />
-        <entry key="..\:/android_projects/wtdif.app/app/src/main/res/layout/fragment_home_play.xml" value="0.2643171806167401" />
+        <entry key="..\:/android_projects/wtdif.app/app/src/main/res/layout/fragment_home_play.xml" value="0.2" />
         <entry key="..\:/android_projects/wtdif.app/app/src/main/res/layout/fragment_home_screen.xml" value="0.176" />
         <entry key="..\:/android_projects/wtdif.app/app/src/main/res/layout/fragment_introduction_screen.xml" value="0.1" />
         <entry key="..\:/android_projects/wtdif.app/app/src/main/res/layout/fragment_plane_play.xml" value="0.2643171806167401" />
         <entry key="..\:/android_projects/wtdif.app/app/src/main/res/layout/fragment_plane_screen.xml" value="0.18478260869565216" />
         <entry key="..\:/android_projects/wtdif.app/app/src/main/res/layout/fragment_play_screen.xml" value="0.1" />
         <entry key="..\:/android_projects/wtdif.app/app/src/main/res/layout/fragment_school_screen.xml" value="0.25" />
+        <entry key="..\:/android_projects/wtdif.app/app/src/main/res/layout/previewdialog.xml" value="0.264" />
         <entry key="..\:/android_projects/wtdif.app/app/src/main/res/layout/register_window.xml" value="0.264" />
         <entry key="..\:/android_projects/wtdif.app/app/src/main/res/layout/sign_in_window.xml" value="0.291970802919708" />
       </map>
