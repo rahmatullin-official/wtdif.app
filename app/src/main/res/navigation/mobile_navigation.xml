@@ -91,6 +91,9 @@
         <action
             android:id="@+id/action_homePlayFragment_to_homeScreenFragment"
             app:destination="@id/homeScreenFragment" />
+        <action
+            android:id="@+id/action_homePlayFragment_to_resultScreenFragment"
+            app:destination="@id/resultScreenFragment" />
     </fragment>
     <fragment
         android:id="@+id/planePlayFragment"
@@ -109,6 +112,9 @@
         <argument
             android:name="points_plane"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_planePlayFragment_to_resultScreenFragment"
+            app:destination="@id/resultScreenFragment" />
     </fragment>
     <fragment
         android:id="@+id/schoolPlayFragment"
@@ -125,6 +131,9 @@
         <argument
             android:name="points_school"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_schoolPlayFragment_to_resultScreenFragment"
+            app:destination="@id/resultScreenFragment" />
     </fragment>
     <fragment
         android:id="@+id/authScreenFragment"
@@ -136,5 +145,14 @@
             app:destination="@id/homeScreenFragment"
             app:enterAnim="@anim/push_up_in"
             app:exitAnim="@anim/slide_in_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultScreenFragment"
+        android:name="space.rahmatullin.firstapp.resultScreenFragment"
+        android:label="fragment_result_screen"
+        tools:layout="@layout/fragment_result_screen" >
+        <argument
+            android:name="points"
+            app:argType="integer" />
     </fragment>
 </navigation>

@@ -15,4 +15,5 @@
     <string name="coins">💰</string>
     <string name="x">X</string>
     <string name="continuee">продолжить</string>
+    <string name="death_description">К сожалению вы ответили неверно и набрали: </string>
 </resources>
