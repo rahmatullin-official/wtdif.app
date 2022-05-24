@@ -141,4 +141,15 @@ public class ChooseSexFragment extends Fragment {
             System.out.println("Ooops bd :(");
         }
     }
+    public static void updateData(int coins){
+        DatabaseReference myRef;
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+
+        FirebaseUser user = mAuth.getInstance().getCurrentUser();
+
+        assert user != null;
+        myRef = FirebaseDatabase.getInstance().getReference("Users/" + user.getUid());
+
+        myRef.child("coins").setValue(coins);
+    }
 }

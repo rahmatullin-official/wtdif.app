@@ -17,6 +17,7 @@ public class User {
         this.points_school = 0;
     }
 
+
     public String getEmail() {
         return email;
     }
