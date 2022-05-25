@@ -147,7 +147,6 @@ public class SchoolPlayFragment extends Fragment {
                     }
                     buttonsCnt[0]++;
                     setTextToButtons(schoolPlayView, buttonsCnt[0], myPlayer);
-                    System.out.println("done " + buttonsCnt[0]);
                 }
                 if (seconds % 5 == 0) {
                     requireActivity().runOnUiThread(() -> {

@@ -131,37 +131,6 @@
                     android:layout_height="10dp"
                     android:layout_weight="1"
                     android:background="@drawable/style_points" />
-                <TextView
-                    android:id="@+id/point5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/style_points" />
-                <TextView
-                    android:id="@+id/point6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/style_points" />
-                <TextView
-                    android:id="@+id/point7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/style_points" />
-                <TextView
-                    android:id="@+id/point8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/style_points" />
-                <TextView
-                    android:id="@+id/point9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/style_points" />
-
             </LinearLayout>
 
         </LinearLayout>

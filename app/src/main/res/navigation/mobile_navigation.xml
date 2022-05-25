@@ -109,6 +109,9 @@
         <argument
             android:name="points_plane"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_planePlayFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
     </fragment>
     <fragment
         android:id="@+id/schoolPlayFragment"

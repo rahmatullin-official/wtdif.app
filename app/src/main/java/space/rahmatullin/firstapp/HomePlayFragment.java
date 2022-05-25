@@ -142,7 +142,6 @@ public class HomePlayFragment extends Fragment {
                     }
                     if (buttonsCnt[0] == 5) {
                         ImageView background = homePlayView.findViewById(R.id.house_background);
-
                         background.setImageResource(R.drawable.padik);
                     }
                     if (buttonsCnt[0] == 8) {

@@ -19,10 +19,10 @@ public class Player {
 
     public String setName(String sex) {
         if (sex.equals("male"))  {
-            List<String> maleNames = Arrays.asList("Damir Rakhmatullin", "Ivan Alexeev", "Vasya Artemov");
+            List<String> maleNames = Arrays.asList("Дамир", "Ваня", "Леша");
             return maleNames.get(new Random().nextInt(maleNames.size()));
         } else {
-            List<String> femaleNames = Arrays.asList("Lana Denisova", "Eva Elife", "Sweetie Fox");
+            List<String> femaleNames = Arrays.asList("Лана", "Катя", "Лиза");
             return femaleNames.get(new Random().nextInt(femaleNames.size()));
         }
     }
