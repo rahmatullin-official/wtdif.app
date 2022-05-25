@@ -125,6 +125,9 @@
         <argument
             android:name="points_school"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_schoolPlayFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
     </fragment>
     <fragment
         android:id="@+id/authScreenFragment"

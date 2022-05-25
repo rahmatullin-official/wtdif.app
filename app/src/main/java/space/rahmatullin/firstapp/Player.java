@@ -5,12 +5,13 @@ import java.util.List;
 import java.util.Random;
 
 public class Player {
-    public String Name;
+    public String Name, sex;
     public int coins, skin, points;
 
 
     public Player(String sex, int coins, int skin, int points) {
         this.Name = setName(sex);
+        this.sex = sex;
         this.coins = coins;
         this.skin = setSkin(sex);
         this.points = points;
