@@ -1,6 +1,9 @@
 package space.rahmatullin.firstapp;
 
 import android.annotation.SuppressLint;
+import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,8 +13,10 @@ import androidx.navigation.fragment.NavHostFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
@@ -141,6 +146,7 @@ public class ChooseSexFragment extends Fragment {
             System.out.println("Ooops bd :(");
         }
     }
+
     public static void updateData(int coins){
         DatabaseReference myRef;
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
@@ -151,5 +157,51 @@ public class ChooseSexFragment extends Fragment {
         myRef = FirebaseDatabase.getInstance().getReference("Users/" + user.getUid());
 
         myRef.child("coins").setValue(coins);
+    }
+
+    public static void checkUserMoney(int skin, View myView) {
+        FrameLayout homePlayView;
+        DatabaseReference myRef;
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+
+        FirebaseUser user = mAuth.getInstance().getCurrentUser();
+
+        assert user != null;
+        myRef = FirebaseDatabase.getInstance().getReference("Users/" + user.getUid());
+        try {
+
+            myRef.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    Integer coins = snapshot.child("coins").getValue(int.class);
+                    if (coins >= 100) {
+                        myRef.child("coins").setValue(coins - 100);
+                        myRef.child("skin").setValue(skin);
+                    }
+                    else{
+                        Snackbar.make(myView, "Вам нужно 100 монет, чтобы совершить покупку", Snackbar.LENGTH_SHORT).show();
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+                }
+            });
+        }
+        catch (NullPointerException e){
+            System.out.println("oops bd :£");
+        }
+    }
+
+    public static void updatePlayerSkin(int skin){
+        DatabaseReference myRef;
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+
+        FirebaseUser user = mAuth.getInstance().getCurrentUser();
+
+        assert user != null;
+        myRef = FirebaseDatabase.getInstance().getReference("Users/" + user.getUid());
+
+        myRef.child("skin").setValue(skin);
     }
 }
