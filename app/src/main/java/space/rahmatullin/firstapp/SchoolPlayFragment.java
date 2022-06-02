@@ -55,6 +55,12 @@ public class SchoolPlayFragment extends Fragment {
             player.setImageResource(R.drawable.boy);
         } else if (myPlayer.skin == 1) {
             player.setImageResource(R.drawable.girl);
+        } else if (myPlayer.skin == 2) {
+            player.setImageResource(R.drawable.skin_first);
+        } else if (myPlayer.skin == 3) {
+            player.setImageResource(R.drawable.skin_second);
+        } else if (myPlayer.skin == 4) {
+            player.setImageResource(R.drawable.skin_third);
         }
 
         List<String> dialogs = Arrays.asList("Привет, Настя! Наконец-то вижу тебя в школе! ", "Привет, " + myPlayer.Name +

@@ -160,7 +160,6 @@ public class ChooseSexFragment extends Fragment {
     }
 
     public static void checkUserMoney(int skin, View myView) {
-        FrameLayout homePlayView;
         DatabaseReference myRef;
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
@@ -191,17 +190,5 @@ public class ChooseSexFragment extends Fragment {
         catch (NullPointerException e){
             System.out.println("oops bd :£");
         }
-    }
-
-    public static void updatePlayerSkin(int skin){
-        DatabaseReference myRef;
-        FirebaseAuth mAuth = FirebaseAuth.getInstance();
-
-        FirebaseUser user = mAuth.getInstance().getCurrentUser();
-
-        assert user != null;
-        myRef = FirebaseDatabase.getInstance().getReference("Users/" + user.getUid());
-
-        myRef.child("skin").setValue(skin);
     }
 }

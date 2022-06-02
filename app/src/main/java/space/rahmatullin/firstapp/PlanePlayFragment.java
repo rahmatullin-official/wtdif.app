@@ -55,6 +55,12 @@ public class PlanePlayFragment extends Fragment {
             player.setImageResource(R.drawable.boy);
         } else if (myPlayer.skin == 1) {
             player.setImageResource(R.drawable.girl);
+        } else if (myPlayer.skin == 2) {
+            player.setImageResource(R.drawable.skin_first);
+        } else if (myPlayer.skin == 3) {
+            player.setImageResource(R.drawable.skin_second);
+        } else if (myPlayer.skin == 4) {
+            player.setImageResource(R.drawable.skin_third);
         }
 
         List<String> dialogs = Arrays.asList("Даже не вериться что в этом году мы с мамой собрались вдвоём на море! Она всегда занята работой, а я так скучаю по ней…\n" +
@@ -148,15 +154,15 @@ public class PlanePlayFragment extends Fragment {
                             }
                         }
                         if (buttonsCnt[0] == 1) {
-                            if(cnt[0] == 1){
+                            if (cnt[0] == 1) {
                                 ImageView character = planePlayView.findViewById(R.id.character);
                                 character.setImageResource(R.drawable.stuardessa);
                             }
-                            if(cnt[0] == 5 || cnt[0] == 10){
+                            if (cnt[0] == 5 || cnt[0] == 10) {
                                 ImageView character = planePlayView.findViewById(R.id.character);
                                 character.setImageResource(R.drawable.mother);
                             }
-                            if (cnt[0] == 8){
+                            if (cnt[0] == 8) {
                                 ImageView character = planePlayView.findViewById(R.id.character);
                                 character.setImageResource(R.drawable.pilot);
                             }
@@ -185,14 +191,13 @@ public class PlanePlayFragment extends Fragment {
                                 playerText.setText(dialogs.get(cnt[0]));
                             }
                         }
-                        if (buttonsCnt[0] == 3){
-                            if(cnt[0] == 0){
+                        if (buttonsCnt[0] == 3) {
+                            if (cnt[0] == 0) {
                                 character.setVisibility(View.INVISIBLE);
                                 characterText.setText("");
                                 player.setVisibility(View.VISIBLE);
                                 playerText.setText(dialogs.get(cnt[0]));
-                            }
-                            else{
+                            } else {
                                 ImageView character = planePlayView.findViewById(R.id.character);
                                 character.setImageResource(R.drawable.stuardessa);
                                 player.setVisibility(View.INVISIBLE);
@@ -201,15 +206,15 @@ public class PlanePlayFragment extends Fragment {
                                 characterText.setText(dialogs.get(cnt[0]));
                             }
                         }
-                        if(buttonsCnt[0] == 4){
-                            if(cnt[0] == 1){
+                        if (buttonsCnt[0] == 4) {
+                            if (cnt[0] == 1) {
                                 ImageView character = planePlayView.findViewById(R.id.character);
                                 character.setImageResource(R.drawable.mother);
                                 player.setVisibility(View.INVISIBLE);
                                 playerText.setText("");
                                 character.setVisibility(View.VISIBLE);
                                 characterText.setText(dialogs.get(cnt[0]));
-                            }else{
+                            } else {
                                 character.setVisibility(View.INVISIBLE);
                                 characterText.setText("");
                                 player.setVisibility(View.VISIBLE);
@@ -307,7 +312,7 @@ public class PlanePlayFragment extends Fragment {
                             .setBackgroundResource(R.drawable.style_points_green));
                     timerText(planePlayView, 8, list4, myPlayer, cnt);
                 });
-               break;
+                break;
             case 5:
                 List<String> list5 = Arrays.asList("Мама, можно считать этот день вторым днём рождения?", "Думаю что, да\n" +
                                 "Главное что мы остались целыми и невредимыми. Приедем домой- купим большой торт!",

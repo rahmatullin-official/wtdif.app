@@ -10,6 +10,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.NavDirections;
 import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
@@ -45,16 +46,16 @@ public class HomeScreenFragment extends Fragment {
         buttonStart.setOnClickListener(view -> {
             HomeScreenFragmentDirections.ActionHomeScreenFragmentToChooseSexFragment action = HomeScreenFragmentDirections.actionHomeScreenFragmentToChooseSexFragment();
             action.setId(1);
-            NavHostFragment.findNavController(this).navigate(action);
+            NavHostFragment.findNavController(this).navigate((NavDirections) action);
         });
         buttonNext.setOnClickListener(view -> changeNavFragment(R.id.action_homeScreenFragment_to_planeScreenFragment));
         buttonPrev.setOnClickListener(view -> changeNavFragment(R.id.action_homeScreenFragment_to_schoolScreenFragment));
-        buttonShop.setOnClickListener(view -> createShopDialog(homeScreenView));
+        buttonShop.setOnClickListener(view -> createShopDialog());
 
         return homeScreenView;
     }
 
-    private void createShopDialog(View homeScreenView){
+    private void createShopDialog(){
         dialog = new Dialog(getActivity());
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); // скрываем заголовок
         dialog.setContentView(R.layout.shop_dialog); // путь к макету диалогового окна
@@ -67,8 +68,9 @@ public class HomeScreenFragment extends Fragment {
         Button button_third = dialog.findViewById(R.id.button_third);
 
         btnclose.setOnClickListener(view -> dialog.dismiss());
-        button_first.setOnClickListener(view -> checkUserMoney(3, homeScreenView));
-
+        button_first.setOnClickListener(view -> checkUserMoney(2, dialog.getCurrentFocus()));
+        button_second.setOnClickListener(view -> checkUserMoney(3,dialog.getCurrentFocus()));
+        button_third.setOnClickListener(view -> checkUserMoney(4, dialog.getCurrentFocus()));
         dialog.show();
     }
 

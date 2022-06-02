@@ -68,6 +68,12 @@ public class HomePlayFragment extends Fragment {
             player.setImageResource(R.drawable.boy);
         } else if (myPlayer.skin == 1) {
             player.setImageResource(R.drawable.girl);
+        } else if (myPlayer.skin == 2) {
+            player.setImageResource(R.drawable.skin_first);
+        } else if (myPlayer.skin == 3) {
+            player.setImageResource(R.drawable.skin_second);
+        } else if (myPlayer.skin == 4) {
+            player.setImageResource(R.drawable.skin_third);
         }
 
         List<String> dialogs = Arrays.asList("Наконец-то я дома! Сейчас быстренько сделаю все уроки и посмотрю наконец-то мультики!",
