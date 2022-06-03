@@ -68,9 +68,9 @@ public class HomeScreenFragment extends Fragment {
         Button button_third = dialog.findViewById(R.id.button_third);
 
         btnclose.setOnClickListener(view -> dialog.dismiss());
-        button_first.setOnClickListener(view -> checkUserMoney(2, dialog.getCurrentFocus()));
-        button_second.setOnClickListener(view -> checkUserMoney(3,dialog.getCurrentFocus()));
-        button_third.setOnClickListener(view -> checkUserMoney(4, dialog.getCurrentFocus()));
+        button_first.setOnClickListener(view -> checkUserMoney(2, getView()));
+        button_second.setOnClickListener(view -> checkUserMoney(3, getView()));
+        button_third.setOnClickListener(view -> checkUserMoney(4, getView()));
         dialog.show();
     }
 

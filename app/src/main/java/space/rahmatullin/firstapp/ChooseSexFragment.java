@@ -141,13 +141,12 @@ public class ChooseSexFragment extends Fragment {
                     NavHostFragment.findNavController(this).navigate(action3);
                     break;
             }
-        }
-        catch (NullPointerException e){
+        } catch (NullPointerException e) {
             System.out.println("Ooops bd :(");
         }
     }
 
-    public static void updateData(int coins){
+    public static void updateData(int coins) {
         DatabaseReference myRef;
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
@@ -176,9 +175,7 @@ public class ChooseSexFragment extends Fragment {
                     if (coins >= 100) {
                         myRef.child("coins").setValue(coins - 100);
                         myRef.child("skin").setValue(skin);
-                    }
-                    else{
-                        Snackbar.make(myView, "Вам нужно 100 монет, чтобы совершить покупку", Snackbar.LENGTH_SHORT).show();
+                        Snackbar.make(myView, "Успешно!", Snackbar.LENGTH_SHORT).show();
                     }
                 }
 
@@ -186,8 +183,7 @@ public class ChooseSexFragment extends Fragment {
                 public void onCancelled(@NonNull DatabaseError error) {
                 }
             });
-        }
-        catch (NullPointerException e){
+        } catch (NullPointerException e) {
             System.out.println("oops bd :£");
         }
     }

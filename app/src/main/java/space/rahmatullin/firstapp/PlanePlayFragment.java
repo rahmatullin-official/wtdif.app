@@ -134,95 +134,99 @@ public class PlanePlayFragment extends Fragment {
 
                 }
                 if (seconds % 10 == 0) {
-                    requireActivity().runOnUiThread(() -> {
-                        if (buttonsCnt[0] == 0) {
-                            if (cnt[0] == 3 || cnt[0] == 5 || cnt[0] == 8 ||
-                                    cnt[0] == 10 || cnt[0] == 12) {
-                                playerText.setText("");
-                                player.setVisibility(View.INVISIBLE);
-                                character.setVisibility(View.VISIBLE);
-                                characterText.setText(dialogs.get(cnt[0]));
-                            } else {
-                                if (cnt[0] == 7) {
-                                    ImageView background = planePlayView.findViewById(R.id.plane_background);
-                                    background.setImageResource(R.drawable.inplane);
+                    try {
+                        requireActivity().runOnUiThread(() -> {
+                            if (buttonsCnt[0] == 0) {
+                                if (cnt[0] == 3 || cnt[0] == 5 || cnt[0] == 8 ||
+                                        cnt[0] == 10 || cnt[0] == 12) {
+                                    playerText.setText("");
+                                    player.setVisibility(View.INVISIBLE);
+                                    character.setVisibility(View.VISIBLE);
+                                    characterText.setText(dialogs.get(cnt[0]));
+                                } else {
+                                    if (cnt[0] == 7) {
+                                        ImageView background = planePlayView.findViewById(R.id.plane_background);
+                                        background.setImageResource(R.drawable.inplane);
+                                    }
+                                    characterText.setText("");
+                                    character.setVisibility(View.INVISIBLE);
+                                    player.setVisibility(View.VISIBLE);
+                                    playerText.setText(dialogs.get(cnt[0]));
                                 }
-                                characterText.setText("");
-                                character.setVisibility(View.INVISIBLE);
-                                player.setVisibility(View.VISIBLE);
-                                playerText.setText(dialogs.get(cnt[0]));
                             }
-                        }
-                        if (buttonsCnt[0] == 1) {
-                            if (cnt[0] == 1) {
-                                ImageView character = planePlayView.findViewById(R.id.character);
-                                character.setImageResource(R.drawable.stuardessa);
+                            if (buttonsCnt[0] == 1) {
+                                if (cnt[0] == 1) {
+                                    ImageView character = planePlayView.findViewById(R.id.character);
+                                    character.setImageResource(R.drawable.stuardessa);
+                                }
+                                if (cnt[0] == 5 || cnt[0] == 10) {
+                                    ImageView character = planePlayView.findViewById(R.id.character);
+                                    character.setImageResource(R.drawable.mother);
+                                }
+                                if (cnt[0] == 8) {
+                                    ImageView character = planePlayView.findViewById(R.id.character);
+                                    character.setImageResource(R.drawable.pilot);
+                                }
+                                if (cnt[0] == 1 || cnt[0] == 5 || cnt[0] == 8 || cnt[0] == 10) {
+                                    player.setVisibility(View.INVISIBLE);
+                                    playerText.setText("");
+                                    character.setVisibility(View.VISIBLE);
+                                    characterText.setText(dialogs.get(cnt[0]));
+                                } else {
+                                    character.setVisibility(View.INVISIBLE);
+                                    characterText.setText("");
+                                    player.setVisibility(View.VISIBLE);
+                                    playerText.setText(dialogs.get(cnt[0]));
+                                }
                             }
-                            if (cnt[0] == 5 || cnt[0] == 10) {
-                                ImageView character = planePlayView.findViewById(R.id.character);
-                                character.setImageResource(R.drawable.mother);
+                            if (buttonsCnt[0] == 2) {
+                                if (cnt[0] == 4 || cnt[0] == 6) {
+                                    player.setVisibility(View.INVISIBLE);
+                                    playerText.setText("");
+                                    character.setVisibility(View.VISIBLE);
+                                    characterText.setText(dialogs.get(cnt[0]));
+                                } else {
+                                    character.setVisibility(View.INVISIBLE);
+                                    characterText.setText("");
+                                    player.setVisibility(View.VISIBLE);
+                                    playerText.setText(dialogs.get(cnt[0]));
+                                }
                             }
-                            if (cnt[0] == 8) {
-                                ImageView character = planePlayView.findViewById(R.id.character);
-                                character.setImageResource(R.drawable.pilot);
+                            if (buttonsCnt[0] == 3) {
+                                if (cnt[0] == 0) {
+                                    character.setVisibility(View.INVISIBLE);
+                                    characterText.setText("");
+                                    player.setVisibility(View.VISIBLE);
+                                    playerText.setText(dialogs.get(cnt[0]));
+                                } else {
+                                    ImageView character = planePlayView.findViewById(R.id.character);
+                                    character.setImageResource(R.drawable.stuardessa);
+                                    player.setVisibility(View.INVISIBLE);
+                                    playerText.setText("");
+                                    character.setVisibility(View.VISIBLE);
+                                    characterText.setText(dialogs.get(cnt[0]));
+                                }
                             }
-                            if (cnt[0] == 1 || cnt[0] == 5 || cnt[0] == 8 || cnt[0] == 10) {
-                                player.setVisibility(View.INVISIBLE);
-                                playerText.setText("");
-                                character.setVisibility(View.VISIBLE);
-                                characterText.setText(dialogs.get(cnt[0]));
-                            } else {
-                                character.setVisibility(View.INVISIBLE);
-                                characterText.setText("");
-                                player.setVisibility(View.VISIBLE);
-                                playerText.setText(dialogs.get(cnt[0]));
+                            if (buttonsCnt[0] == 4) {
+                                if (cnt[0] == 1) {
+                                    ImageView character = planePlayView.findViewById(R.id.character);
+                                    character.setImageResource(R.drawable.mother);
+                                    player.setVisibility(View.INVISIBLE);
+                                    playerText.setText("");
+                                    character.setVisibility(View.VISIBLE);
+                                    characterText.setText(dialogs.get(cnt[0]));
+                                } else {
+                                    character.setVisibility(View.INVISIBLE);
+                                    characterText.setText("");
+                                    player.setVisibility(View.VISIBLE);
+                                    playerText.setText(dialogs.get(cnt[0]));
+                                }
                             }
-                        }
-                        if (buttonsCnt[0] == 2) {
-                            if (cnt[0] == 4 || cnt[0] == 6) {
-                                player.setVisibility(View.INVISIBLE);
-                                playerText.setText("");
-                                character.setVisibility(View.VISIBLE);
-                                characterText.setText(dialogs.get(cnt[0]));
-                            } else {
-                                character.setVisibility(View.INVISIBLE);
-                                characterText.setText("");
-                                player.setVisibility(View.VISIBLE);
-                                playerText.setText(dialogs.get(cnt[0]));
-                            }
-                        }
-                        if (buttonsCnt[0] == 3) {
-                            if (cnt[0] == 0) {
-                                character.setVisibility(View.INVISIBLE);
-                                characterText.setText("");
-                                player.setVisibility(View.VISIBLE);
-                                playerText.setText(dialogs.get(cnt[0]));
-                            } else {
-                                ImageView character = planePlayView.findViewById(R.id.character);
-                                character.setImageResource(R.drawable.stuardessa);
-                                player.setVisibility(View.INVISIBLE);
-                                playerText.setText("");
-                                character.setVisibility(View.VISIBLE);
-                                characterText.setText(dialogs.get(cnt[0]));
-                            }
-                        }
-                        if (buttonsCnt[0] == 4) {
-                            if (cnt[0] == 1) {
-                                ImageView character = planePlayView.findViewById(R.id.character);
-                                character.setImageResource(R.drawable.mother);
-                                player.setVisibility(View.INVISIBLE);
-                                playerText.setText("");
-                                character.setVisibility(View.VISIBLE);
-                                characterText.setText(dialogs.get(cnt[0]));
-                            } else {
-                                character.setVisibility(View.INVISIBLE);
-                                characterText.setText("");
-                                player.setVisibility(View.VISIBLE);
-                                playerText.setText(dialogs.get(cnt[0]));
-                            }
-                        }
-                        cnt[0]++;
-                    });
+                            cnt[0]++;
+                        });
+                    }catch (Exception e) {
+                        System.out.println("oppsss!(");
+                    }
                     System.out.println(buttonsCnt[0]);
                 }
                 seconds--;

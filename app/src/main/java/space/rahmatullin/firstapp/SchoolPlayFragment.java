@@ -100,7 +100,7 @@ public class SchoolPlayFragment extends Fragment {
     }
 
     private void timerText(View schoolPlayView, int pause, List<String> dialogs,
-                           Player myPlayer, int btncnt) {
+                           Player myPlayer, int btncnt) throws IllegalStateException {
 
         TextView characterText = (TextView) schoolPlayView.findViewById(R.id.charactertext);
         TextView playerText = (TextView) schoolPlayView.findViewById(R.id.playertext);
@@ -111,133 +111,141 @@ public class SchoolPlayFragment extends Fragment {
         final int[] buttonsCnt = {btncnt};
 
         timer = new Timer();
-        timer.scheduleAtFixedRate(new TimerTask() {
-            @SuppressLint("SetTextI18n")
-            @Override
-            public void run() {
-                if (seconds == 0) {
-                    minutes--;
-                    seconds = 60;
-                }
-                if (cnt[0] == pause) {
-                    timer.purge();
-                    timer.cancel();
-                    if (buttonsCnt[0] == 0) {
-                        requireActivity().runOnUiThread(() -> {
-                            characterText.setText("");
-                            character.setVisibility(View.INVISIBLE);
-                        });
-                        ImageView background = schoolPlayView.findViewById(R.id.school_background);
-                        background.setImageResource(R.drawable.cabinet);
-                        ImageView character = schoolPlayView.findViewById(R.id.character);
-                        character.setImageResource(R.drawable.gromkogovoritel);
+        try {
+            timer.scheduleAtFixedRate(new TimerTask() {
+                @SuppressLint("SetTextI18n")
+                @Override
+                public void run() {
+                    if (seconds == 0) {
+                        minutes--;
+                        seconds = 60;
                     }
-                    if (buttonsCnt[0] == 2) {
-                        ImageView character = schoolPlayView.findViewById(R.id.character);
-                        character.setImageResource(R.drawable.teacher);
-
-                    }
-                    if (buttonsCnt[0] == 4) {
-                        requireActivity().runOnUiThread(() -> {
-                            character.setVisibility(View.INVISIBLE);
-                        });
-                        ImageView character = schoolPlayView.findViewById(R.id.character);
-                        character.setImageResource(R.drawable.terrorist);
-                        requireActivity().runOnUiThread(() -> {
-                            character.setVisibility(View.VISIBLE);
-                        });
-                    }
-                    if (buttonsCnt[0] == 6) {
-                        ImageView character = schoolPlayView.findViewById(R.id.character);
-                        character.setImageResource(R.drawable.classmate);
-                    }
-                    buttonsCnt[0]++;
-                    setTextToButtons(schoolPlayView, buttonsCnt[0], myPlayer);
-                }
-                if (seconds % 5 == 0) {
-                    requireActivity().runOnUiThread(() -> {
+                    if (cnt[0] == pause) {
+                        timer.purge();
+                        timer.cancel();
                         if (buttonsCnt[0] == 0) {
-                            if (cnt[0] == 0 || cnt[0] == 2 || cnt[0] == 3) {
+                            requireActivity().runOnUiThread(() -> {
                                 characterText.setText("");
                                 character.setVisibility(View.INVISIBLE);
-                                player.setVisibility(View.VISIBLE);
-                                playerText.setText(dialogs.get(cnt[0]));
-                            } else {
-                                playerText.setText("");
-                                player.setVisibility(View.INVISIBLE);
-                                character.setVisibility(View.VISIBLE);
-                                characterText.setText(dialogs.get(cnt[0]));
-                            }
+                            });
+                            ImageView background = schoolPlayView.findViewById(R.id.school_background);
+                            background.setImageResource(R.drawable.cabinet);
+                            ImageView character = schoolPlayView.findViewById(R.id.character);
+                            character.setImageResource(R.drawable.gromkogovoritel);
                         }
-                        if (buttonsCnt[0] == 1) {
-                            if (cnt[0] == 0) {
-                                character.setVisibility(View.INVISIBLE);
-                                characterText.setText("");
-                                player.setVisibility(View.VISIBLE);
-                                playerText.setText(dialogs.get(cnt[0]));
-                            } else {
-                                player.setVisibility(View.INVISIBLE);
-                                playerText.setText("");
-                                character.setVisibility(View.VISIBLE);
-                                characterText.setText(dialogs.get(cnt[0]));
-                            }
-                        }
-                        if (buttonsCnt[0] == 2) { // teacher dialog
-                            playerText.setText("");
-                            player.setVisibility(View.INVISIBLE);
-                            character.setVisibility(View.VISIBLE);
-                            characterText.setText(dialogs.get(cnt[0]));
-                        }
-                        if (buttonsCnt[0] == 3) {
-                            if (cnt[0] == 0 || cnt[0] == 2) {
-                                character.setVisibility(View.INVISIBLE);
-                                characterText.setText("");
-                                player.setVisibility(View.VISIBLE);
-                                playerText.setText(dialogs.get(cnt[0]));
-                            } else {
-                                player.setVisibility(View.INVISIBLE);
-                                playerText.setText("");
-                                character.setVisibility(View.VISIBLE);
-                                characterText.setText(dialogs.get(cnt[0]));
-                            }
+                        if (buttonsCnt[0] == 2) {
+                            ImageView character = schoolPlayView.findViewById(R.id.character);
+                            character.setImageResource(R.drawable.teacher);
+
                         }
                         if (buttonsCnt[0] == 4) {
-                            player.setVisibility(View.INVISIBLE);
-                            playerText.setText("");
-                            character.setVisibility(View.VISIBLE);
-                            characterText.setText(dialogs.get(cnt[0]));
-                        }
-                        if (buttonsCnt[0] == 5) {
-                            character.setVisibility(View.INVISIBLE);
-                            characterText.setText("");
-                            player.setVisibility(View.VISIBLE);
-                            playerText.setText(dialogs.get(cnt[0]));
-                        }
-                        if (buttonsCnt[0] == 6 || buttonsCnt[0] == 7) {
-                            character.setVisibility(View.INVISIBLE);
-                            characterText.setText("");
-                            player.setVisibility(View.VISIBLE);
-                            playerText.setText(dialogs.get(cnt[0]));
-                        }
-                        if (buttonsCnt[0] == 8) {
-                            if (cnt[0] == 0 || cnt[0] == 2 ) {
-                                player.setVisibility(View.INVISIBLE);
-                                playerText.setText("");
-                                character.setVisibility(View.VISIBLE);
-                                characterText.setText(dialogs.get(cnt[0]));
-                            } else {
+                            requireActivity().runOnUiThread(() -> {
                                 character.setVisibility(View.INVISIBLE);
-                                characterText.setText("");
-                                player.setVisibility(View.VISIBLE);
-                                playerText.setText(dialogs.get(cnt[0]));
-                            }
+                            });
+                            ImageView character = schoolPlayView.findViewById(R.id.character);
+                            character.setImageResource(R.drawable.terrorist);
+                            requireActivity().runOnUiThread(() -> {
+                                character.setVisibility(View.VISIBLE);
+                            });
                         }
-                        cnt[0]++;
-                    });
+                        if (buttonsCnt[0] == 6) {
+                            ImageView character = schoolPlayView.findViewById(R.id.character);
+                            character.setImageResource(R.drawable.classmate);
+                        }
+                        buttonsCnt[0]++;
+                        setTextToButtons(schoolPlayView, buttonsCnt[0], myPlayer);
+                    }
+                    if (seconds % 5 == 0) {
+                        try {
+                            requireActivity().runOnUiThread(() -> {
+                                if (buttonsCnt[0] == 0) {
+                                    if (cnt[0] == 0 || cnt[0] == 2 || cnt[0] == 3) {
+                                        characterText.setText("");
+                                        character.setVisibility(View.INVISIBLE);
+                                        player.setVisibility(View.VISIBLE);
+                                        playerText.setText(dialogs.get(cnt[0]));
+                                    } else {
+                                        playerText.setText("");
+                                        player.setVisibility(View.INVISIBLE);
+                                        character.setVisibility(View.VISIBLE);
+                                        characterText.setText(dialogs.get(cnt[0]));
+                                    }
+                                }
+                                if (buttonsCnt[0] == 1) {
+                                    if (cnt[0] == 0) {
+                                        character.setVisibility(View.INVISIBLE);
+                                        characterText.setText("");
+                                        player.setVisibility(View.VISIBLE);
+                                        playerText.setText(dialogs.get(cnt[0]));
+                                    } else {
+                                        player.setVisibility(View.INVISIBLE);
+                                        playerText.setText("");
+                                        character.setVisibility(View.VISIBLE);
+                                        characterText.setText(dialogs.get(cnt[0]));
+                                    }
+                                }
+                                if (buttonsCnt[0] == 2) { // teacher dialog
+                                    playerText.setText("");
+                                    player.setVisibility(View.INVISIBLE);
+                                    character.setVisibility(View.VISIBLE);
+                                    characterText.setText(dialogs.get(cnt[0]));
+                                }
+                                if (buttonsCnt[0] == 3) {
+                                    if (cnt[0] == 0 || cnt[0] == 2) {
+                                        character.setVisibility(View.INVISIBLE);
+                                        characterText.setText("");
+                                        player.setVisibility(View.VISIBLE);
+                                        playerText.setText(dialogs.get(cnt[0]));
+                                    } else {
+                                        player.setVisibility(View.INVISIBLE);
+                                        playerText.setText("");
+                                        character.setVisibility(View.VISIBLE);
+                                        characterText.setText(dialogs.get(cnt[0]));
+                                    }
+                                }
+                                if (buttonsCnt[0] == 4) {
+                                    player.setVisibility(View.INVISIBLE);
+                                    playerText.setText("");
+                                    character.setVisibility(View.VISIBLE);
+                                    characterText.setText(dialogs.get(cnt[0]));
+                                }
+                                if (buttonsCnt[0] == 5) {
+                                    character.setVisibility(View.INVISIBLE);
+                                    characterText.setText("");
+                                    player.setVisibility(View.VISIBLE);
+                                    playerText.setText(dialogs.get(cnt[0]));
+                                }
+                                if (buttonsCnt[0] == 6 || buttonsCnt[0] == 7) {
+                                    character.setVisibility(View.INVISIBLE);
+                                    characterText.setText("");
+                                    player.setVisibility(View.VISIBLE);
+                                    playerText.setText(dialogs.get(cnt[0]));
+                                }
+                                if (buttonsCnt[0] == 8) {
+                                    if (cnt[0] == 0 || cnt[0] == 2) {
+                                        player.setVisibility(View.INVISIBLE);
+                                        playerText.setText("");
+                                        character.setVisibility(View.VISIBLE);
+                                        characterText.setText(dialogs.get(cnt[0]));
+                                    } else {
+                                        character.setVisibility(View.INVISIBLE);
+                                        characterText.setText("");
+                                        player.setVisibility(View.VISIBLE);
+                                        playerText.setText(dialogs.get(cnt[0]));
+                                    }
+                                }
+                                cnt[0]++;
+                            });
+                        }catch (Exception e) {
+                            System.out.println("oops");
+                        }
+                    }
+                    seconds--;
                 }
-                seconds--;
-            }
-        }, 1000, 1000);
+            }, 1000, 1000);
+        }catch (IllegalStateException e){
+            System.out.println("Oops");
+        }
     }
 
     private void setTextToButtons(View schoolPlayView, int cnt, Player myPlayer) {

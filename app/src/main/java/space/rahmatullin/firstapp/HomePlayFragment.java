@@ -75,7 +75,7 @@ public class HomePlayFragment extends Fragment {
         } else if (myPlayer.skin == 4) {
             player.setImageResource(R.drawable.skin_third);
         }
-
+        System.out.println(myPlayer.skin);
         List<String> dialogs = Arrays.asList("Наконец-то я дома! Сейчас быстренько сделаю все уроки и посмотрю наконец-то мультики!",
                 myPlayer.Name + ", подойди ко мне пожалуйста!", "Сейчас подойду, мам …. Что ты хотела?", "Я сейчас срочно должна уехать на работу. " +
                         "На плите стоит суп, через 10 минут он будет готов. Не забудь пожалуйста выключить плиту, хорошо?",
@@ -194,51 +194,55 @@ public class HomePlayFragment extends Fragment {
                     setTextToButtons(homePlayView, buttonsCnt[0], myPlayer);
                 }
                 if (seconds % 5 == 0) {
-                    requireActivity().runOnUiThread(() -> {
-                        if (buttonsCnt[0] == 0) {
-                            if (cnt[0] == 0 || cnt[0] == 2 || cnt[0] == 4 || cnt[0] > 5) {
-                                characterText.setText("");
-                                character.setVisibility(View.INVISIBLE);
-                                player.setVisibility(View.VISIBLE);
-                                playerText.setText(dialogs.get(cnt[0]));
-                            } else {
-                                playerText.setText("");
-                                player.setVisibility(View.INVISIBLE);
-                                character.setVisibility(View.VISIBLE);
-                                characterText.setText(dialogs.get(cnt[0]));
+                    try {
+                        requireActivity().runOnUiThread(() -> {
+                            if (buttonsCnt[0] == 0) {
+                                if (cnt[0] == 0 || cnt[0] == 2 || cnt[0] == 4 || cnt[0] > 5) {
+                                    characterText.setText("");
+                                    character.setVisibility(View.INVISIBLE);
+                                    player.setVisibility(View.VISIBLE);
+                                    playerText.setText(dialogs.get(cnt[0]));
+                                } else {
+                                    playerText.setText("");
+                                    player.setVisibility(View.INVISIBLE);
+                                    character.setVisibility(View.VISIBLE);
+                                    characterText.setText(dialogs.get(cnt[0]));
+                                }
                             }
-                        }
-                        if (buttonsCnt[0] == 1) {
-                            player.setVisibility(View.INVISIBLE);
-                            playerText.setText("");
-                            character.setVisibility(View.VISIBLE);
-                            characterText.setText(dialogs.get(cnt[0]));
-                        }
-                        if (buttonsCnt[0] == 2) {
-                            if (cnt[0] == 0) {
-                                characterText.setText(dialogs.get(cnt[0]));
-                            } else {
-                                character.setVisibility(View.INVISIBLE);
-                                characterText.setText("");
-                                player.setVisibility(View.VISIBLE);
-                                playerText.setText(dialogs.get(cnt[0]));
-                            }
-                        }
-                        if (buttonsCnt[0] > 2 && buttonsCnt[0] < 9) {
-                            playerText.setText(dialogs.get(cnt[0]));
-                        }
-                        if (buttonsCnt[0] == 9) {
-                            if (cnt[0] == 0) {
-                                playerText.setText(dialogs.get(cnt[0]));
-                            } else {
+                            if (buttonsCnt[0] == 1) {
                                 player.setVisibility(View.INVISIBLE);
                                 playerText.setText("");
                                 character.setVisibility(View.VISIBLE);
                                 characterText.setText(dialogs.get(cnt[0]));
                             }
-                        }
-                        cnt[0]++;
-                    });
+                            if (buttonsCnt[0] == 2) {
+                                if (cnt[0] == 0) {
+                                    characterText.setText(dialogs.get(cnt[0]));
+                                } else {
+                                    character.setVisibility(View.INVISIBLE);
+                                    characterText.setText("");
+                                    player.setVisibility(View.VISIBLE);
+                                    playerText.setText(dialogs.get(cnt[0]));
+                                }
+                            }
+                            if (buttonsCnt[0] > 2 && buttonsCnt[0] < 9) {
+                                playerText.setText(dialogs.get(cnt[0]));
+                            }
+                            if (buttonsCnt[0] == 9) {
+                                if (cnt[0] == 0) {
+                                    playerText.setText(dialogs.get(cnt[0]));
+                                } else {
+                                    player.setVisibility(View.INVISIBLE);
+                                    playerText.setText("");
+                                    character.setVisibility(View.VISIBLE);
+                                    characterText.setText(dialogs.get(cnt[0]));
+                                }
+                            }
+                            cnt[0]++;
+                        });
+                    } catch (Exception e) {
+                        System.out.println("");
+                    }
                 }
                 seconds--;
 //                System.out.println(seconds);

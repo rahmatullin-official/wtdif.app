@@ -15,6 +15,11 @@ public class Player {
         this.coins = coins;
         this.skin = setSkin(sex);
         this.points = points;
+        if (skin < 2){
+            this.skin = setSkin(sex);
+        }else {
+            this.skin = skin;
+        }
     }
 
     public String setName(String sex) {
@@ -28,7 +33,7 @@ public class Player {
     }
 
     public int setSkin(String sex){
-        if (sex.equals("male") && skin < 2){
+        if (sex.equals("male")){
             return 0;
         }
         else{
